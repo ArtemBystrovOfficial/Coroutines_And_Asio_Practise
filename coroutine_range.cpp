@@ -80,14 +80,14 @@ private:
 	coro_handle handle_;
 };
 
-generator<int> sequence(int start, int fin, int step) {
+generator<int> range(int start, int fin, int step) {
 	int num;
 	for (auto num = start; num < fin; num += step)
 		co_yield num;
 }
 
 int main() {
-	for (auto num : sequence(5, 20, 3)) 
+	for (auto num : range(5, 20, 3)) 
 		std::cout << num << std::endl;
 
 }
